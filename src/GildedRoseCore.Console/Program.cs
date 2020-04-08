@@ -13,15 +13,15 @@ namespace ConsoleApplication
 
     public class Program
     {
-        IList<Item> Items;
+        public IList<Item> Items;
 
         public static void Main(string[] args)
         {
             Console.WriteLine("OMGHAI!");
-
+            
             var app = new Program()
             {
-                Items = new List<Item>
+                Items = new List<Item> 
                         {
                             new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                             new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
@@ -84,11 +84,14 @@ namespace ConsoleApplication
                     }
                 }
 
+                // restar sellin
                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
 
+
+                // modificar calidad
                 if (Items[i].SellIn < 0)
                 {
                     if (Items[i].Name != "Aged Brie")
